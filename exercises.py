@@ -17,7 +17,7 @@ def reverse_string(s):
     """
     Reverses order of characters in string s.
     """
-    return None
+    return s[::-1] 
 
 
 def test_reverse_string():
@@ -31,7 +31,10 @@ def is_english_vowel(c):
     Returns True if c is an english vowel
     and False otherwise.
     """
-    return None
+    if c in ('a','e','i','o','u','y','A','E','I','O','U','Y'):
+        return True
+    else:
+        return False
 
 
 def test_is_english_vowel():
@@ -58,7 +61,11 @@ def count_num_vowels(s):
     """
     Returns the number of vowels in a string s.
     """
-    return None
+    n=0
+    for i in s:
+        if i in ('a','e','i','o','u','y','A','E','I','O','U','Y'):
+            n=n+1
+    return n
 
 
 def test_count_num_vowels():
@@ -80,7 +87,11 @@ def histogram(l):
     """
     Converts a list of integers into a simple string histogram.
     """
-    return None
+    s=''
+    for i in l:
+        s=s+'#'*i+'\n'
+    s=s[:-1]
+    return s
 
 
 def test_histogram():
@@ -94,7 +105,10 @@ def get_word_lengths(s):
     Returns a list of integers representing
     the word lengths in string s.
     """
-    return None
+    i= []
+    for x in s.split(' '):
+        i.append(len(x))
+    return i
 
 
 def test_get_word_lengths():
@@ -109,7 +123,10 @@ def find_longest_word(s):
     Returns the longest word in string s.
     In case there are several, return the first.
     """
-    return None
+    l=[len(x) for x in s.split(' ')]
+    for x in s.split(' '):
+        if len(x) == max(l):
+            return x
 
 
 def test_find_longest_word():
@@ -126,7 +143,13 @@ def validate_dna(s):
     Return True if the DNA string only contains characters
     a, c, t, or g (lower or uppercase). False otherwise.
     """
-    return None
+    for n in range(len(s)):
+        if s[n] in ('a','t','c','g','A','T','C','G'):
+            n=n+1
+            while n==len(s)-1:
+                return True
+        else:
+            return False
 
 
 def test_validate_dna():
@@ -143,7 +166,17 @@ def base_pair(c):
     of the base pair. If the base is not recognized,
     return 'unknown'.
     """
-    return None
+    if c in ('A','a'):
+        return 't'
+    elif c in ('T','t'):
+        return 'a'
+    elif c in ('c','C'):
+        return 'g'
+    elif c in ('g','G'):
+        return 'c'
+    else:
+        return 'unknown'
+
 
 
 def test_base_pair():
@@ -166,7 +199,21 @@ def transcribe_dna_to_rna(s):
     Return string s with each letter T replaced by U.
     Result is always uppercase.
     """
-    return None
+    y=''
+    for n in range(len(s)):
+        if s[n]=='a':
+            y+='A'
+        elif s[n]=='t':
+            y+='U'
+        elif s[n]=='c':
+            y+='C'
+        elif s[n]=='g':
+            y+='G'
+        elif s[n]=='T':
+            y+='U'
+        else:
+            y+=s[n]
+    return y
 
 
 def test_transcribe_dna_to_rna():
@@ -181,7 +228,26 @@ def get_complement(s):
     Return the DNA complement in uppercase
     (A -> T, T-> A, C -> G, G-> C).
     """
-    return None
+    y=''
+    for n in range(len(s)):
+        if s[n]=='a':
+            y+='T'
+        elif s[n]=='t':
+            y+='A'
+        elif s[n]=='c':
+            y+='G'
+        elif s[n]=='g':
+            y+='C'
+        elif s[n]=='A':
+            y+='T'
+        elif s[n]=='T':
+            y+='A'
+        elif s[n]=='G':
+            y+='C'
+        elif s[n]=='C':
+            y+='G'
+
+    return y
 
 
 def test_get_complement():
@@ -196,7 +262,26 @@ def get_reverse_complement(s):
     Return the reverse complement of string s
     (complement reversed in order).
     """
-    return None
+    y=''
+    for n in range(len(s)):
+        if s[n]=='a':
+            y+='T'
+        elif s[n]=='t':
+            y+='A'
+        elif s[n]=='c':
+            y+='G'
+        elif s[n]=='g':
+            y+='C'
+        elif s[n]=='A':
+            y+='T'
+        elif s[n]=='T':
+            y+='A'
+        elif s[n]=='G':
+            y+='C'
+        elif s[n]=='C':
+            y+='G'
+
+    return y[::-1]
 
 
 def test_get_reverse_complement():
