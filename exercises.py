@@ -3,7 +3,7 @@ def cgp(s):
     #This is the new test
     return (format(float(s.count('G') + s.count('C'))/ len(s),'.2%'))
 def cgp():
-    assert cgp('CGATCGAT') == 50.00%
+    assert cgp('CGATCGAT') == '50.00%'
 
 
 # ------------------------------------------------------------------------------
