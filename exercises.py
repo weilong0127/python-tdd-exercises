@@ -1,10 +1,9 @@
 def cgp(s):
-    # C and G percentage of a sequence
-    #This is the new test
+ #culculate C and G percentage in the whole sequence
     return (format(float(s.count('G') + s.count('C'))/ len(s),'.2%'))
+
 def test_cgp():
     assert cgp('CGATCGAT') == '50.00%'
-
 
 # ------------------------------------------------------------------------------
 
@@ -185,7 +184,6 @@ def base_pair(c):
         return 'c'
     else:
         return 'unknown'
-
 
 
 def test_base_pair():
