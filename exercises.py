@@ -1,3 +1,12 @@
+def cgp(s):
+    # C and G percentage of a sequence
+    #This is the new test
+    return (format(float(s.count('G') + s.count('C'))/ len(s),'.2%'))
+def cgp():
+    assert cgp('CGATCGAT') == 50.00%
+
+
+# ------------------------------------------------------------------------------
 
 def reverse_list(l):
     """
